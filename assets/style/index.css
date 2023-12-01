@@ -12,93 +12,163 @@ body {
     font-family: 'Press Start 2P', cursive; /* Example game font */
 }
 
-/* Center the game container */
+/* Layout for the game container */
 #gameContainer {
     position: relative;
-    width: 90%;
-    max-width: 800px;
-    margin: 2em auto;
-    text-align: center;
-    padding: 1em;
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
-    border-radius: 10px;
-}
-
-/* Style the score and timer */
-#scoreContainer, #timerContainer {
-    font-size: 1.5em;
-    color: #FFF;
-    background: rgba(0, 0, 0, 0.5);
-    display: inline-block;
-    margin: 0.5em;
-    padding: 0.5em;
-    border-radius: 5px;
-}
-
-/* Style the word prompt */
-#wordPrompt {
-    font-size: 2em;
-    margin: 1em 0;
-    padding: 0.5em;
-    border: 2px dashed #FFF;
-    color: #FFF;
-    display: inline-block;
-    min-width: 300px;
-}
-
-/* Style the input */
-#wordInput {
-    font-size: 1em;
-    padding: 0.5em;
-    margin-bottom: 1em;
-}
-
-/* Generic button styles */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Styling for score and timer containers */
+  #scoreContainer, #timerContainer {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  
+  #scoreContainer {
+    top: 10px;
+    left: 10px;
+  }
+  
+  #timerContainer {
+    top: 10px;
+    right: 10px;
+  }
+  
+  /* Animation class */
+  .animate-change {
+    animation: pop 0.5s;
+  }
+  
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Word prompt and input styling */
+  #wordPrompt, #wordInput {
+    font-size: 2rem;
+    margin: 0.5rem;
+  }
+  
+  #wordInput {
+    width: 80%;
+    padding: 0.5rem;
+  }
+  
+  /* Fullscreen modal for game over */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
+  /* Button base styles */
 button {
-    background-color: #008CBA; /* Blue */
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
-
-/* Modal styles */
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* Text color */
+    padding: 15px 32px; /* Padding inside the button */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underlines */
+    display: inline-block; /* Allow to set dimensions */
+    font-size: 16px; /* Text size */
+    margin: 4px 2px; /* Margin around the button */
+    cursor: pointer; /* Cursor to pointer */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s ease; /* Smooth transform on click */
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+  }
+  
+  /* Button active/click effect */
+  button:active {
+    transform: translateY(4px); /* Move down inside the shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust shadow */
+  }
+  
+  /* Button icon styles */
+  #startButton, #restartButton, #resumeButton {
+    background-image: url('path-to-icon.png'); /* Add your icon path */
+    background-size: 30px 30px; /* Icon size */
+    background-repeat: no-repeat; /* No repeat */
+    background-position: center; /* Center icon */
+  }
+  
+  /* Word prompt styling */
+  #wordPrompt {
+    font-size: 3rem; /* Large text */
+    color: #FFD700; /* Gold color for star-like appearance */
+    animation: glow 1s infinite alternate; /* Glowing effect */
+  }
+  
+  /* Glowing effect */
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #FFD700; }
+    to { text-shadow: 0 0 20px #FFD700; }
+  }
+  
+  /* Input styling */
+  #wordInput {
+    font-size: 2rem; /* Large text */
+    width: 50%; /* Half of the container width */
+    padding: 1rem; /* Comfortable padding */
+    margin: 1rem 0; /* Space from other elements */
+    border: 2px solid #FFD700; /* Gold border */
+    border-radius: 8px; /* Rounded corners */
+  }
+  /* Additional CSS for countdown modal */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 2; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.modal-content {
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
     border-radius: 10px;
-}
-
-/* Hover effects for buttons */
-button:hover {
-    background-color: #005f73;
-}
-
-/* Add responsiveness */
-@media (max-width: 600px) {
-    #gameContainer {
-        width: 100%;
-    }
-}
+    text-align: center;
+  }
+  
+  #countdown {
+    font-size: 4rem;
+    margin-top: 20px;
+  }
+  

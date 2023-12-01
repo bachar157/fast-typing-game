@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./assets/style/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script defer src="./assets/script/index.js" type="module"></script>
+    <script defer src="./assets/script/animation.js" type="module"></script>
+
 
     <title>fast typing game  </title>
   </head>
@@ -31,6 +33,12 @@
           <p>Your score is <span id="finalScore">0</span>.</p>
           <button id="closeModal" class="modal-close btn">Play Again</button>
       </div>
+  </div>
+  <div id="countdownModal" class="modal">
+    <div class="modal-content">
+      <h2>Get Ready!</h2>
+      <div id="countdown">3</div>
+    </div>
   </div>
   <!-- <audio id="backgroundMusic" src="./assets/audio/8bit-music-for-game-68698 (1).mp3" loop></audio>
   <audio id="buttonSound" src="./assets/audio/button sound.wav"></audio>
