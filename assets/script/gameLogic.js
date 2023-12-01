@@ -28,7 +28,6 @@ export function restartGame() {
     stopBackgroundMusic();
     startGame();
 }
-
 export function checkInput() {
     playKeyPress();
     if (wordInput.value.trim().toLowerCase() === words[currentWordIndex].toLowerCase()) {

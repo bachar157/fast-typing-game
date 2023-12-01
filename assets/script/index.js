@@ -1,11 +1,9 @@
-console.log('hi')
-
-import { startGame, restartGame } from './gameLogic.js';
+import { startGame, restartGame, checkInput } from './gameLogic.js';
 import { playButtonClick } from './sounds.js';
 
+document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.getElementById('startButton');
     const restartButton = document.getElementById('restartButton');
-    const resumeButton = document.getElementById('resumeButton');
     const wordInput = document.getElementById('wordInput');
 
     startButton.addEventListener('click', () => {
@@ -18,11 +16,5 @@ import { playButtonClick } from './sounds.js';
         restartGame();
     });
 
-    resumeButton.addEventListener('click', () => {
-        playButtonClick();
-        // Implement resume logic if needed
-    });
-
     wordInput.addEventListener('input', checkInput);
-
-    selectRandomWord()
+});
