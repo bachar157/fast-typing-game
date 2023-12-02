@@ -29,11 +29,11 @@ body {
     width: 150px;
     height: 140px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,215,0,0.8) 40%, transparent 70%);
+    background: radial-gradient(circle, rgba(17, 17, 17, 0.8) 50%, transparent 70%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4rem;
+    font-size: 3.8rem;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     color: white; /* Change font color to white */
     text-align: center;
@@ -176,4 +176,49 @@ button {
     font-size: 4rem;
     margin-top: 20px;
   }
-  
+  /* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  /* Adjust font sizes for smaller screens */
+  #wordPrompt, #wordInput, button {
+      font-size: 3rem; /* Adjust as needed */
+  }
+
+  #scoreContainer, #timerContainer {
+      font-size: 2.5rem; /* Smaller font for score and timer */
+      width: 100px;
+      height: 90px;
+  }
+
+  #wordInput {
+      width: 70%; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #scoreContainer, #timerContainer {
+      font-size: 3rem; /* Even smaller font for score and timer */
+      width: 80px;
+      height: 70px;
+      top: 100px; /* Adjust positioning */
+  }
+
+  #scoreContainer {
+      left: 50px;
+  }
+
+  #timerContainer {
+      right: 50px;
+  }
+
+  #wordPrompt {
+      font-size: 7.5rem; /* Smaller font size for very small screens */
+      margin:  2rem;
+  }
+   #wordInput {
+    font-size: 3.5rem; /* Smaller font size for very small screens */
+    margin:  2rem
+}
+  #wordInput {
+      width: 70%;
+  }
+}
