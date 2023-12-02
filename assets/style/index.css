@@ -67,7 +67,7 @@ body {
   }
   
   .modal {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -112,13 +112,23 @@ button {
   }
   
   /* Button icon styles */
-  #startButton, #restartButton {
+  #startButton {
     background-image: url('../img/button.png'); 
     background-size: 750%; 
     background-repeat: no-repeat; 
     background-position: center; 
+    width:28rem ;
+    height: 15rem;
+    font-size: 9rem;
+    padding: 2rem;
   }
-  
+  #restartButton {
+    background-image: url('../img/button.png'); 
+    background-size: 750%; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+   
+  }
   /* Word prompt styling */
   #wordPrompt {
     font-size: 10rem; 
@@ -189,9 +199,14 @@ button {
   }
 @media (max-width: 768px) {
 
-  #wordPrompt, #wordInput, button {
-      font-size: 3rem; 
+  #wordPrompt {
+      font-size: 7.5rem; 
   }
+  #wordInput, button {
+    font-size: 3.5rem; 
+}
+
+  
 
   #scoreContainer, #timerContainer {
       font-size: 2.5rem; 
