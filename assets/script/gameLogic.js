@@ -13,34 +13,39 @@ const timerDisplay = document.getElementById('time');
 const gameOverModal = document.getElementById('gameOverModal');
 const finalScore = document.getElementById('finalScore');
 
-export function startGame() {
+export function togglePauseResume() {
     if (isGamePaused) {
-        // Resuming the game
-        isGamePaused = false;
-        gameInterval = setInterval(updateGame, 1000);
-        playBackgroundMusic();
+        // Resume game logic
+        resumeGame();
+        document.getElementById('togglePauseResume').textContent = 'Pause';
     } else {
-        // Starting a new game
-        score = 0;
-        timeLeft = 99;
-        selectRandomWord();
-        wordInput.disabled = false;
-        scoreDisplay.textContent = score;
-        timerDisplay.textContent = timeLeft;
-        playBackgroundMusic();
-        gameInterval = setInterval(updateGame, 1000);
+        // Pause game logic
+        pauseGame();
+        document.getElementById('togglePauseResume').textContent = 'Resume';
     }
+}
+export function startGame() {
+    resetGame();
+    gameInterval = setInterval(updateGame, 1000);
+    playBackgroundMusic();
 }
 
 export function pauseGame() {
     clearInterval(gameInterval);
     isGamePaused = true;
-    stopBackgroundMusic();
+    stopBackgroundMusic();  // Optional: stop music on pause
+}
+
+export function resumeGame() {
+    if (isGamePaused) {
+        gameInterval = setInterval(updateGame, 1000);
+        isGamePaused = false;
+        playBackgroundMusic();  // Optional: resume music
+    }
 }
 
 export function restartGame() {
-    clearInterval(gameInterval);
-    stopBackgroundMusic();
+    resetGame();
     startGame();
 }
 
@@ -57,8 +62,6 @@ export function checkInput() {
 function selectRandomWord() {
     currentWordIndex = Math.floor(Math.random() * words.length);
     wordDisplay.textContent = words[currentWordIndex];
-    console.log("New word selected:", words[currentWordIndex]); // Debugging line
-
 }
 
 function updateGame() {
@@ -76,4 +79,16 @@ function endGame() {
     stopBackgroundMusic();
     finalScore.textContent = score;
     gameOverModal.style.display = 'block';
+}
+
+function resetGame() {
+    score = 0;
+    timeLeft = 99;
+    isGamePaused = false;
+    scoreDisplay.textContent = score;
+    timerDisplay.textContent = timeLeft;
+    selectRandomWord();
+    wordInput.disabled = false;
+    wordInput.value = '';
+    gameOverModal.style.display = 'none';
 }

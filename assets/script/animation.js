@@ -9,6 +9,8 @@
   const backgroundMusic = document.getElementById('backgroundMusic');
   const buttonSound = document.getElementById('buttonSound');
   const keyboardSound = document.getElementById('keyboardSound');
+  const togglePauseResumeButton = document.getElementById('togglePauseResume');
+
 
   // Initially hide all game elements except the start button
   gameOverModal.style.display = 'none';
@@ -19,6 +21,8 @@
   timerContainer.style.display = 'none';
   restartButton.style.display = 'none';
   resumeButton.style.display = 'none';
+  togglePauseResumeButton.style.display = 'none';
+
 
   // Function to show game elements
   function showGameElements() {
@@ -27,7 +31,9 @@
     scoreContainer.style.display = 'block';
     timerContainer.style.display = 'block';
     restartButton.style.display = 'block';
-    resumeButton.style.display = 'block';
+    resumeButton.style.display = 'none';
+    togglePauseResumeButton.style.display = 'block';
+
   }
 
   // Function to show the countdown modal

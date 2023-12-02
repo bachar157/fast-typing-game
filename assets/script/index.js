@@ -1,11 +1,20 @@
-import { startGame, restartGame, checkInput } from './gameLogic.js';
+import { startGame, restartGame, togglePauseResume, checkInput } from './gameLogic.js';
 import { playButtonClick } from './sounds.js';
 
-document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.getElementById('startButton');
     const restartButton = document.getElementById('restartButton');
+    const resumeButton = document.getElementById('resumeButton');
+    const pauseButton = document.getElementById('pauseButton');  // Add a pause button to your HTML if you haven't already
     const wordInput = document.getElementById('wordInput');
-
+    const togglePauseResumeButton = document.getElementById('togglePauseResume');
+    
+    if (togglePauseResumeButton) {
+        togglePauseResumeButton.addEventListener('click', () => {
+            playButtonClick();
+            togglePauseResume();
+        });
+    }
+    
     startButton.addEventListener('click', () => {
         playButtonClick();
         startGame();
@@ -16,5 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
         restartGame();
     });
 
+    resumeButton.addEventListener('click', () => {
+        playButtonClick();
+        resumeGame();
+    });
+
+   
+
     wordInput.addEventListener('input', checkInput);
-});

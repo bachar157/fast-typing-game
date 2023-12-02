@@ -199,7 +199,7 @@ button {
       font-size: 3rem; /* Even smaller font for score and timer */
       width: 80px;
       height: 70px;
-      top: 100px; /* Adjust positioning */
+      top: 80px; /* Adjust positioning */
   }
 
   #scoreContainer {
