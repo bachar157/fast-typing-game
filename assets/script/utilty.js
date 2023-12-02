@@ -29,12 +29,13 @@ function onEvent(selector, event, callback) {
     });
   }
   
-  // Generate random number between - and including - 'min' and 'max'
-  function randomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-  
-  // Filter array
-  function filterArray(array, callback) {
-    return array.filter(callback);
-  }
+
+
+  export {
+    onEvent,
+    getElement,
+    select,
+    selectAll,
+    print,
+    sleep,
+  };

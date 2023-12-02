@@ -1,15 +1,25 @@
-  const startButton = document.getElementById('startButton');
-  const gameOverModal = document.getElementById('gameOverModal');
-  const countdownModal = document.getElementById('countdownModal');
-  const countdownDisplay = document.getElementById('countdown');
-  const wordInput = document.getElementById('wordInput');
-  const wordPrompt = document.getElementById('wordPrompt');
-  const scoreContainer = document.getElementById('scoreContainer');
-  const timerContainer = document.getElementById('timerContainer');
-  const backgroundMusic = document.getElementById('backgroundMusic');
-  const buttonSound = document.getElementById('buttonSound');
-  const keyboardSound = document.getElementById('keyboardSound');
-  const togglePauseResumeButton = document.getElementById('togglePauseResume');
+"use strict";
+
+import {
+  onEvent,
+  getElement,
+  select,
+  selectAll,
+
+} from "./utilty.js";
+
+  const startButton = getElement('startButton');
+  const gameOverModal = getElement('gameOverModal');
+  const countdownModal = getElement('countdownModal');
+  const countdownDisplay =getElement('countdown');
+  const wordInput = getElement('wordInput');
+  const wordPrompt = getElement('wordPrompt');
+  const scoreContainer =getElement('scoreContainer');
+  const timerContainer = getElement('timerContainer');
+  const backgroundMusic =getElement('backgroundMusic');
+  const buttonSound = getElement('buttonSound');
+  const keyboardSound = getElement('keyboardSound');
+  const togglePauseResumeButton = getElement('togglePauseResume');
 
 
   // Initially hide all game elements except the start button
@@ -87,9 +97,9 @@
   });
 
   // Event listener for the close button on the game over modal
-  document.getElementById('closeModal').addEventListener('click', () => {
+  getElement('closeModal').addEventListener('click', () => {
     gameOverModal.style.display = 'none';
-    startButton.style.display = 'block'; // Show start button again
+    startButton.style.display = 'none'; // Show start button again
     // Optionally, reset game state here
     // ...
   });

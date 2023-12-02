@@ -1,18 +1,15 @@
-/* Reset some default styles */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
-/* Apply a background image or color */
 body {
     background: url('../img/gamebackground.png') no-repeat center center fixed;
     background-size: cover;
-    font-family: 'Press Start 2P', cursive; /* Example game font */
+    font-family: 'Press Start 2P', cursive; 
 }
 
-/* Layout for the game container */
 #gameContainer {
     position: relative;
     width: 100%;
@@ -23,7 +20,6 @@ body {
     justify-content: center;
   }
   
-  /* Styling for score and timer containers */
   #scoreContainer, #timerContainer {
     position: absolute;
     width: 150px;
@@ -35,7 +31,7 @@ body {
     justify-content: center;
     font-size: 3.8rem;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    color: white; /* Change font color to white */
+    color: white; 
     text-align: center;
   }
   
@@ -60,7 +56,6 @@ body {
     100% { transform: scale(1); }
   }
   
-  /* Word prompt and input styling */
   #wordPrompt, #wordInput {
     font-size: 5rem;
     margin: 0.5rem;
@@ -71,7 +66,6 @@ body {
     padding: 0.5rem;
   }
   
-  /* Fullscreen modal for game over */
   .modal {
     position: fixed;
     top: 0;
@@ -91,45 +85,45 @@ body {
   }
   /* Button base styles */
 button {
-    background-color: #4CAF50; /* Green background */
-    border: none; /* Remove borders */
-    color: white; /* Text color */
-    padding: 15px 32px; /* Padding inside the button */
-    text-align: center; /* Center text */
-    text-decoration: none; /* Remove underlines */
-    display: inline-block; /* Allow to set dimensions */
-    font-size: 16px; /* Text size */
-    margin: 4px 2px; /* Margin around the button */
-    cursor: pointer; /* Cursor to pointer */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    transition: transform 0.3s ease; /* Smooth transform on click */
+    background-color: #4CAF50; 
+    border: none; 
+    color: white;
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; 
   }
   
   /* Button hover effect */
   button:hover {
-    background-color: #45a049; /* Darker shade on hover */
+    background-color: #45a049; 
   }
   
   /* Button active/click effect */
   button:active {
-    transform: translateY(4px); /* Move down inside the shadow */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust shadow */
+    transform: translateY(4px); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
   }
   
   /* Button icon styles */
   #startButton, #restartButton {
-    background-image: url('../img/button.png'); /* Add your icon path */
-    background-size: 750%; /* Icon size */
-    background-repeat: no-repeat; /* No repeat */
-    background-position: center; /* Center icon */
+    background-image: url('../img/button.png'); 
+    background-size: 750%; 
+    background-repeat: no-repeat; 
+    background-position: center; 
   }
   
   /* Word prompt styling */
   #wordPrompt {
-    font-size: 10rem; /* Large text */
-    color: #ffffff; /* Gold color for star-like appearance */
-    animation: glow 1s infinite alternate; /* Glowing effect */
+    font-size: 10rem; 
+    color: #ffffff; 
+    animation: glow 1s infinite alternate; 
     background: radial-gradient(circle at center, rgba(65, 65, 64, 0.9), rgba(255, 255, 0, 0.3) 50%, transparent 70%), 
     rgba(0, 0, 0, 0.1);
         padding: 3rem;
@@ -143,63 +137,79 @@ button {
   
   /* Input styling */
   #wordInput {
-    font-size: 2rem; /* Large text */
-    width: 50%; /* Half of the container width */
-    padding: 1rem; /* Comfortable padding */
-    margin: 10rem 0; /* Space from other elements */
-    border: 2px solid #FFD700; /* Gold border */
-    border-radius: 8px; /* Rounded corners */
+    font-size: 2rem; 
+    width: 50%; 
+    padding: 1rem; 
+    margin: 10rem 0; 
+    border: 2px solid #FFD700;
+    border-radius: 8px; 
   }
   /* Additional CSS for countdown modal */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
+  .modal {
+    display: none;
+    position: fixed; 
+    z-index: 2; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #fefefe;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-  }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+.modal-close {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.modal-close:hover {
+    background-color: #45a049;
+}
+
   
   #countdown {
     font-size: 4rem;
     margin-top: 20px;
   }
-  /* Responsive Design Adjustments */
 @media (max-width: 768px) {
-  /* Adjust font sizes for smaller screens */
+
   #wordPrompt, #wordInput, button {
-      font-size: 3rem; /* Adjust as needed */
+      font-size: 3rem; 
   }
 
   #scoreContainer, #timerContainer {
-      font-size: 2.5rem; /* Smaller font for score and timer */
+      font-size: 2.5rem; 
       width: 100px;
       height: 90px;
   }
 
   #wordInput {
-      width: 70%; /* Adjust width for smaller screens */
+      width: 70%; 
   }
 }
 
 @media (max-width: 480px) {
   #scoreContainer, #timerContainer {
-      font-size: 3rem; /* Even smaller font for score and timer */
+      font-size: 3rem; 
       width: 80px;
       height: 70px;
-      top: 80px; /* Adjust positioning */
+      top: 80px; 
   }
 
   #scoreContainer {
@@ -211,11 +221,11 @@ button {
   }
 
   #wordPrompt {
-      font-size: 7.5rem; /* Smaller font size for very small screens */
+      font-size: 7.5rem; 
       margin:  2rem;
   }
    #wordInput {
-    font-size: 3.5rem; /* Smaller font size for very small screens */
+    font-size: 3.5rem; 
     margin:  2rem
 }
   #wordInput {

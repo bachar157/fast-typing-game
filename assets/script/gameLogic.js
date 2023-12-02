@@ -1,3 +1,6 @@
+"use strict";
+
+
 import { words } from './words.js';
 import { playKeyPress, playBackgroundMusic, stopBackgroundMusic } from './sounds.js';
 
@@ -33,14 +36,14 @@ export function startGame() {
 export function pauseGame() {
     clearInterval(gameInterval);
     isGamePaused = true;
-    stopBackgroundMusic();  // Optional: stop music on pause
+    stopBackgroundMusic(); 
 }
 
 export function resumeGame() {
     if (isGamePaused) {
         gameInterval = setInterval(updateGame, 1000);
         isGamePaused = false;
-        playBackgroundMusic();  // Optional: resume music
+        playBackgroundMusic(); 
     }
 }
 
