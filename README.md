@@ -4,7 +4,7 @@
 Fast Typing Game is a web-based game that challenges players to type words accurately and quickly. It features a simple yet engaging interface with a countdown timer to start the game, a score tracker, and a dynamic word prompt.
 
 ## Demo
-You can try the game live [here](#) (add the link to your live demo).
+You can try the game live [here](https://bachar157.github.io/fast-typing-game/) 
 
 ## Features
 - Start button with a countdown timer.
@@ -21,3 +21,7 @@ You can try the game live [here](#) (add the link to your live demo).
 5. Use the pause button to temporarily stop the game and the restart button to restart.
 
 
+## what did i use to create it 
+[![HTML Badge](https://img.shields.io/badge/-HTML-E34F26?style=for-the-badge&labelColor=black&logo=html5&logoColor=E34F26)](#)
+[![CSS Badge](https://img.shields.io/badge/-CSS-1572B6?style=for-the-badge&labelColor=black&logo=css3&logoColor=1572B6)](#)
+[![JavaScript Badge](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&labelColor=black&logo=javascript&logoColor=F7DF1E)](#)
