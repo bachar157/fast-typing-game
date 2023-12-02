@@ -60,7 +60,7 @@ body {
   
   /* Word prompt and input styling */
   #wordPrompt, #wordInput {
-    font-size: 2rem;
+    font-size: 5rem;
     margin: 0.5rem;
   }
   
@@ -125,9 +125,12 @@ button {
   
   /* Word prompt styling */
   #wordPrompt {
-    font-size: 3rem; /* Large text */
-    color: #FFD700; /* Gold color for star-like appearance */
+    font-size: 10rem; /* Large text */
+    color: #ffffff; /* Gold color for star-like appearance */
     animation: glow 1s infinite alternate; /* Glowing effect */
+    background: radial-gradient(circle at center, rgba(65, 65, 64, 0.9), rgba(255, 255, 0, 0.3) 40%, transparent 90%), 
+    rgba(0, 0, 0, 0.1);
+        padding: 3rem;
   }
   
   /* Glowing effect */
@@ -139,9 +142,9 @@ button {
   /* Input styling */
   #wordInput {
     font-size: 2rem; /* Large text */
-    width: 50%; /* Half of the container width */
+    width: 25%; /* Half of the container width */
     padding: 1rem; /* Comfortable padding */
-    margin: 1rem 0; /* Space from other elements */
+    margin: 10rem 0; /* Space from other elements */
     border: 2px solid #FFD700; /* Gold border */
     border-radius: 8px; /* Rounded corners */
   }

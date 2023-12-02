@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
   const startButton = document.getElementById('startButton');
   const gameOverModal = document.getElementById('gameOverModal');
   const countdownModal = document.getElementById('countdownModal');
@@ -89,8 +88,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // ...
   });
 
-  // Event listener for word input (to play keyboard sound)
-  wordInput.addEventListener('input', () => {
-    keyboardSound.play();
-  });
-});
+  
