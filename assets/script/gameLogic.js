@@ -94,4 +94,6 @@ function resetGame() {
     wordInput.disabled = false;
     wordInput.value = '';
     gameOverModal.style.display = 'none';
+    backgroundMusic.currentTime = 0;
+
 }
