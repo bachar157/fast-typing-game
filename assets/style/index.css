@@ -62,7 +62,7 @@ body {
   }
   
   #wordInput {
-    width: 80%;
+    width: 40%;
     padding: 0.5rem;
   }
   
@@ -117,9 +117,9 @@ button {
     background-size: 750%; 
     background-repeat: no-repeat; 
     background-position: center; 
-    width:15rem ;
-    height: 9rem;
-    font-size: 4rem;
+    width:28rem ;
+    height: 15rem;
+    font-size: 9rem;
     padding: 2rem;
   }
   #startButton:hover {
@@ -250,72 +250,4 @@ button {
   #wordInput {
       width: 70%;
   }
-}
-#scoresList {
-  list-style-type: none; /* Remove default list bullets */
-  padding: 0;
-  width: 250px; /* Adjust width as needed */
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for the score list */
-  border-radius: 10px; /* Rounded corners for the container */
-  margin: 20px auto; /* Center the container with margin */
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-}
-
-/* Individual Score Items */
-#scoresList li {
-  background-color: rgba(255, 255, 255, 0.1); /* Slightly visible background for contrast */
-  padding: 10px;
-  margin-bottom: 8px; /* Space between items */
-  border-radius: 5px; /* Rounded corners for each item */
-  font-size: 13.5px; /* Readable text size */
-  color: #FFFFFF; /* White text color */
-}
-
-/* Score List Header */
-#scoresList::before {
-  content: 'HIGH SCORES';
-  font-size: 1.5em;
-  font-weight: bold;
-  display: block; /* Block level for spacing */
-  margin-bottom: 20px;
-  color: #FFD700; /* Highlight color */
-}
-
-/* Rank */
-#scoresList li::before {
-  content: '#' attr(data-rank) ' '; /* Rank number */
-  font-weight: bold;
-  margin-right: 5px;
-  color: #FFD700; /* Highlight color for rank */
-}
-
-/* Points and Percentage */
-.score-points, .score-percentage {
-  font-weight: bold;
-}
-
-/* Button Styles */
-button {
-  background-color: #4CAF50; /* Green background for buttons */
-  color: white;
-  padding: 10px 15px;
-  margin: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #367C2B; /* Darker green on hover */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #333; /* Dark background for modal */
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
 }
