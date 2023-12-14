@@ -29,12 +29,21 @@
       <button id="togglePauseResume">Pause</button>
 
   </div>
-  <div id="gameOverModal" class="modal">
-      <div class="modal-content">
-          <h4>Game Over</h4>
-          <p>Your score is <span id="finalScore">0</span>.</p>
-          <button id="closeModal" class="modal-close btn">Play Again</button>
-      </div>
+  <div id="gameOverModal" class="modal" >
+    <div class="modal-content">
+        <h4>Game Over</h4>
+        <p>Your score is <span id="finalScore">0</span>.</p>
+        <p id="scoreDate"></p>
+        <p id="scoreHits"></p>
+        <p id="scorePercentage"></p>
+        <button id="closeModal" class="modal-close btn">Play Again</button>
+        <button id="showScoresButton" class="btn"> Scores</button>
+        <ul id="scoresList">
+        </ul>
+
+    </div>
+</div>
+</div>
   </div>
   <div id="countdownModal" class="modal">
     <div class="modal-content">
@@ -42,9 +51,10 @@
       <div id="countdown">3</div>
     </div>
   </div>
+ 
   <audio id="backgroundMusic" src="./assets/audio/8bit-music-for-game-68698 (1).mp3" loop></audio>
   <audio id="buttonSound" src="./assets/audio/button sound.wav"></audio>
-  <audio id="keyboardSound" src="./assets/audio/keybord.mp3"></audio>
+  <audio id="keyboardSound" src="./assets/audio/mech-keyboard-02-102918.mp3"></audio>
 
 
 </body>

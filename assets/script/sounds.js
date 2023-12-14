@@ -1,4 +1,4 @@
-const keyPressSound = new Audio('./assets/audio/keyboard.mp3');
+const keyPressSound = new Audio('./assets/audio/mech-keyboard-02-102918.mp3');
 const buttonClickSound = new Audio('./assets/audio/button_sound.wav');
 const backgroundMusic = new Audio('./assets/audio/background_music.mp3');
 

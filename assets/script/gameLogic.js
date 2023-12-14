@@ -15,6 +15,8 @@ const scoreDisplay = document.getElementById('score');
 const timerDisplay = document.getElementById('time');
 const gameOverModal = document.getElementById('gameOverModal');
 const finalScore = document.getElementById('finalScore');
+let scores = JSON.parse(localStorage.getItem('scores')) || [];
+
 
 export function togglePauseResume() {
     if (isGamePaused) {
@@ -82,6 +84,8 @@ function endGame() {
     stopBackgroundMusic();
     finalScore.textContent = score;
     gameOverModal.style.display = 'block';
+    addScore();     
+    finalScore.textContent = score;
 }
 
 function resetGame() {
@@ -95,3 +99,21 @@ function resetGame() {
     wordInput.value = '';
     gameOverModal.style.display = 'none';
 }
+ export function createScore() {
+    return {
+      hits: score,
+      percentage: Math.round((score / words.length) * 100), 
+      date: new Date().toLocaleString(),
+    };
+  }
+  export function addScore() {
+    const newScore = createScore();
+    scores.push(newScore);
+    scores.sort((a, b) => b.hits - a.hits);
+    if (scores.length > 9) {
+      scores.splice(9);
+    }
+    localStorage.setItem('scores', JSON.stringify(scores));
+    displayTopScores(); 
+  }
+ 
