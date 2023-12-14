@@ -189,8 +189,8 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 1rem;
-}
+    font-size: 1.05rem;
+  }
 
 .modal-close:hover {
     background-color: #45a049;
@@ -298,19 +298,19 @@ button {
 
 /* Button Styles */
 button {
-  background-color: #4CAF50; /* Green background for buttons */
+  background-color: #4c93af; /* Green background for buttons */
   color: white;
   padding: 10px 15px;
   margin: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #367C2B; /* Darker green on hover */
+  background-color: #455d8a; /* Darker green on hover */
 }
 
 /* Modal Content */
