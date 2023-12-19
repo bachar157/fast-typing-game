@@ -19,7 +19,11 @@ body {
     align-items: center;
     justify-content: center;
   }
-  
+  #scoresList {
+    max-height: 500px;
+    overflow-y: auto;
+    margin: 10px 0;
+}
   #scoreContainer, #timerContainer {
     position: absolute;
     width: 150px;

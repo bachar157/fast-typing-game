@@ -2,6 +2,8 @@
 
 
 import { words } from './words.js';
+import { createScore } from './index.js';
+
 import { playKeyPress, playBackgroundMusic, stopBackgroundMusic } from './sounds.js';
 
 let currentWordIndex;
@@ -86,6 +88,8 @@ function endGame() {
     gameOverModal.style.display = 'block';
     addScore();     
     finalScore.textContent = score;
+    createScore(finalScore, totalWords);
+
 }
 
 function resetGame() {
@@ -101,21 +105,6 @@ function resetGame() {
     backgroundMusic.currentTime = 0;
 
 }
- export function createScore() {
-    return {
-      hits: score,
-      percentage: Math.round((score / words.length) * 100), 
-      date: new Date().toLocaleString(),
-    };
-  }
-  export function addScore() {
-    const newScore = createScore();
-    scores.push(newScore);
-    scores.sort((a, b) => b.hits - a.hits);
-    if (scores.length > 9) {
-      scores.splice(9);
-    }
-    localStorage.setItem('scores', JSON.stringify(scores));
-    displayTopScores(); 
-  }
- 
+
+  
+  
